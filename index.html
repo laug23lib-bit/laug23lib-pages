@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>laug23lib.loc.cc</title>
+<meta name="description" content="laug23lib.loc.cc — 域名已就绪，正常解析并提供服务。">
+<meta name="theme-color" content="#f6f7f9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='white'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --line: #e6e8ec;
+    --ink: #171a1f;
+    --muted: #6b7280;
+    --accent: #4f46e5;
+    --accent-soft: #eef2ff;
+    --ok: #16a34a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(17,24,39,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(17,24,39,.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(circle at 50% 45%, #000 0%, transparent 72%);
+    -webkit-mask-image: radial-gradient(circle at 50% 45%, #000 0%, transparent 72%);
+    pointer-events: none;
+  }
+  .card {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 46px 40px 32px;
+    box-shadow: 0 18px 50px -24px rgba(17,24,39,.22), 0 2px 8px rgba(17,24,39,.04);
+    text-align: center;
+    animation: rise .5s cubic-bezier(.2,.7,.3,1) both;
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 30px;
+    padding: 0 13px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: .04em;
+  }
+  .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--ok);
+    box-shadow: 0 0 0 0 rgba(22,163,74,.5);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(22,163,74,.45); }
+    70% { box-shadow: 0 0 0 7px rgba(22,163,74,0); }
+    100% { box-shadow: 0 0 0 0 rgba(22,163,74,0); }
+  }
+  h1 {
+    margin: 26px 0 10px;
+    font-size: clamp(28px, 6vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -.035em;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+  }
+  h1 .tld { color: var(--accent); }
+  .lead {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .checks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 34px 0 30px;
+    text-align: left;
+  }
+  .check {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 13px 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fcfcfd;
+  }
+  .check .tick {
+    flex: none;
+    width: 17px; height: 17px;
+    margin-top: 1px;
+    border-radius: 50%;
+    background: #dcfce7;
+    color: var(--ok);
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 17px;
+    text-align: center;
+  }
+  .check b { display: block; font-size: 12.5px; line-height: 1.4; }
+  .check small { display: block; margin-top: 2px; font-size: 10.5px; color: var(--muted); line-height: 1.4; }
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    color: #9ca3af;
+    font-size: 12px;
+    letter-spacing: .01em;
+  }
+  @media (max-width: 420px) {
+    .card { padding: 34px 22px 26px; border-radius: 16px; }
+    .checks { grid-template-columns: 1fr; }
+    .check { align-items: center; }
+  }
+</style>
+</head>
+<body>
+  <main class="card">
+    <span class="badge"><span class="dot"></span>ONLINE · 已上线</span>
+    <h1>laug23lib<span class="tld">.loc.cc</span></h1>
+    <p class="lead">域名已就绪，正在正常解析并提供服务。</p>
+
+    <div class="checks">
+      <div class="check"><span class="tick">&#10003;</span><div><b>DNS 解析</b><small>指向 GitHub Pages</small></div></div>
+      <div class="check"><span class="tick">&#10003;</span><div><b>HTTP 访问</b><small>站点可正常打开</small></div></div>
+      <div class="check"><span class="tick">&#10003;</span><div><b>SSL 证书</b><small>HTTPS 已启用</small></div></div>
+    </div>
+
+    <footer>Hosted with GitHub Pages</footer>
+  </main>
+</body>
+</html>
